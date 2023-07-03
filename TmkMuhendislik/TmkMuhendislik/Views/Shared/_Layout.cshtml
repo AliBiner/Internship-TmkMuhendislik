@@ -1,0 +1,99 @@
+﻿@model String[]
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/content/materialize/css/HamburgerMenu.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-...your-integrity-hash...=" crossorigin="anonymous" />
+
+
+    <link href="~/content/materialize/css/NavBarOverItem.css" rel="stylesheet" />
+</head>
+<body>
+   
+        <div class="navbar-wrapper">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                    <a class="navbar-brand px-5" href="#">Navbar</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto flex-wrap">
+                            @foreach (var item in Model)
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">@item</a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+
+
+
+    <div>
+        @RenderBody()
+    </div>
+    <
+        <footer class="bg-dark text-light">
+            <div class="container py-4">
+                <div class="row">
+                    <a class="navbar-brand col-md-1" href="#">Navbar</a>
+                    <div class="col-md-3">
+                        <h5>Yönetim ve Teknik Ofis Adresimiz</h5>
+                        <p>Adres</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h5>Ar-Ge/Yazılım Ofisi Adresimiz</h5>
+                        <p>Adres</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h5>İletişim</h5>
+                        <ul class="list-unstyled">
+                            <li>Email: info@example.com</li>
+                            <li>Phone: 123-456-7890</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2">
+                        <h5>Linkler</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center py-3 bg-secondary">
+                <div class="social-buttons pb-3">
+                    <a href="#" class="btn btn-primary me-2"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="btn btn-primary me-2"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="btn btn-primary"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <p>&copy; 2023 TmkMühendislik - Tüm Hakları Saklıdır.</p>
+
+            </div>
+
+        </footer>
+
+
+
+    <script src="~/scripts/MyScripts/DropDownTrigger.js"></script>
+    <script src="~/scripts/MyScripts/HamburgerMenu.js"></script>
+    <script src="~/scripts/MyScripts/NavBarOverItem.js"></script>
+
+</body>
+
+
+</html>
+
+

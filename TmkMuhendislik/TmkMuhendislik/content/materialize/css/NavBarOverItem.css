@@ -1,0 +1,28 @@
+﻿/*.navbar-nav {*/
+    /*display:flex;*/
+    /*flex-wrap:wrap;*/
+    /*align-items:center;*/
+
+/*}
+
+    .navbar-nav.navbar-item {
+        flex-basis:100%;
+    }*/
+
+/*.navbar {
+    min-height:80px;
+}*/
+
+/*@media(min-width:992px) {
+    .navbar-nav .navbar-item {
+        flex-basis:auto;
+    }
+}*/
+
+.navbar-wrapper {
+    height:auto;
+}
+.nav-item {
+    height:10vh;
+    line-height:10vh;
+}
