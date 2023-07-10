@@ -8,4 +8,9 @@
         .navbar-nav .nav-item {
             margin:10px;
         }
+
+   .navbar-toggler-icon {
+       color: white;
+   }
 }
+

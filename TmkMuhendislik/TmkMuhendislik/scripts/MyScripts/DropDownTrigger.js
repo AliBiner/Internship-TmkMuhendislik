@@ -1,7 +1,9 @@
-﻿document.addEventListener('DOMContentLoaded', function () {
-    var elems = document.querySelectorAll('.dropdown-trigger');
-    M.Dropdown.init(elems, {
-        coverTrigger: false,
-        closeOnClick:false,
-    });
+﻿var dropdown = document.querySelector('.dropdown');
+
+dropdown.addEventListener('mouseenter', function () {
+    dropdown.classList.add('show');
+});
+
+dropdown.addEventListener('mouseleave', function () {
+    dropdown.classList.remove('show');
 });

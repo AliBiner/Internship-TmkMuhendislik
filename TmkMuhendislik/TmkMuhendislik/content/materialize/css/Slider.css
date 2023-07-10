@@ -1,0 +1,28 @@
+﻿.carousel.align-items-center .carousel-inner {
+    display: flex;
+    align-items: center;
+}
+
+.carousel.align-items-center .carousel-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.centered-div {
+ 
+   
+    margin: 10px;
+    padding: 5px;
+
+}
+

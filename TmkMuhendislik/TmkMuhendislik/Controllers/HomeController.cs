@@ -13,10 +13,10 @@ namespace TmkMuhendislik.Controllers
         
         public ActionResult Home()
         {
-            String[] dizi = RandomDataNavbar.RndCount(12);
+            //String[] dizi = RandomDataNavbar.RndCount(12);
             
            
-            return View(dizi);
+            return View();
         }
 
     }

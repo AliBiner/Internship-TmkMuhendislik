@@ -129,18 +129,34 @@
     <Compile Include="RandomData\RandomDataNavbar.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="content\materialize\css\CardBox.css" />
+    <Content Include="content\materialize\css\NavbarProp.css" />
+    <Content Include="content\materialize\css\DropDown.css" />
     <Content Include="content\materialize\css\HamburgerMenu.css" />
     <Content Include="content\materialize\css\materialize.css" />
     <Content Include="content\materialize\css\materialize.min.css" />
+    <Content Include="content\materialize\css\Slider.css" />
     <Content Include="content\materialize\font\material-design-icons\LICENSE.txt" />
     <Content Include="content\materialize\font\material-design-icons\Material-Design-Icons.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\BackgroundImages\Laptop-iStock.jpg" />
+    <Content Include="Images\HomePage\CardImages\indir-1-287x175.png" />
+    <Content Include="Images\HomePage\CardImages\karel-arge-tasarim-512x335.jpg" />
+    <Content Include="Images\HomePage\CardImages\mbr-491x317.jpg" />
+    <Content Include="Images\HomePage\CardImages\ucretsiz-e-ticaret-sitesi-kurmak-491x324.jpg" />
+    <Content Include="Images\Icons\icons8-close-50.png" />
+    <Content Include="Images\Icons\icons8-menu-50.png" />
+    <Content Include="Images\Logo\tmk-logo-beyaz-324x177.png" />
     <Content Include="scripts\materialize\materialize.js" />
     <Content Include="scripts\materialize\materialize.min.js" />
+    <Content Include="scripts\MyScripts\CloseNavbar.js" />
     <Content Include="scripts\MyScripts\DropDownTrigger.js" />
     <Content Include="scripts\MyScripts\HamburgerMenu.js" />
-    <Content Include="content\materialize\css\NavBarOverItem.css" />
+    <Content Include="scripts\MyScripts\HomePageResponsive.js" />
     <Content Include="scripts\MyScripts\NavBarOverItem.js" />
+    <Content Include="Images\SliderItems\HomeSlider\e-ticaret-893x471.png" />
+    <Content Include="Images\SliderItems\HomeSlider\e-ticaret-893x536.png" />
+    <Content Include="Images\SliderItems\HomeSlider\web-sitesi-893x472.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
