@@ -1,0 +1,39 @@
+﻿#first-new {
+    position: relative;
+    background-image: url('../../../Images/BackgroundImages/Laptop-iStock.jpg');
+    background-repeat: no-repeat,repeat;
+    background-size: cover;
+    background-position: center;
+    content: "";
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+}
+#divler {
+    position: absolute;
+    
+}
+
+.self-card {
+    flex-direction: row;
+    align-items: left;
+}
+    .self-card img {
+        border-top-right-radius: 0;
+        border-bottom-left-radius: calc(0.25rem - 1px);
+    }
+
+.news-image-bottom {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+.news-image-top {
+    opacity: 0.3;
+    min-height: 220px;
+}
+
+

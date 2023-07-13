@@ -121,7 +121,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\IndexController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -130,11 +130,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="content\materialize\css\CardBox.css" />
+    <Content Include="content\materialize\css\DetailPage.css" />
     <Content Include="content\materialize\css\NavbarProp.css" />
     <Content Include="content\materialize\css\DropDown.css" />
     <Content Include="content\materialize\css\HamburgerMenu.css" />
     <Content Include="content\materialize\css\materialize.css" />
     <Content Include="content\materialize\css\materialize.min.css" />
+    <Content Include="content\materialize\css\NewsPage.css" />
     <Content Include="content\materialize\css\Slider.css" />
     <Content Include="content\materialize\font\material-design-icons\LICENSE.txt" />
     <Content Include="content\materialize\font\material-design-icons\Material-Design-Icons.svg" />
@@ -219,7 +221,8 @@
     <Content Include="Views\Home\Home.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Index\Index.cshtml" />
+    <Content Include="Views\News\Index.cshtml" />
+    <Content Include="Views\News\Detail.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

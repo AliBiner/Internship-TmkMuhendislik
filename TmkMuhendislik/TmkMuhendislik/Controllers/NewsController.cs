@@ -6,10 +6,15 @@ using System.Web.Mvc;
 
 namespace TmkMuhendislik.Controllers
 {
-    public class IndexController : Controller
+    public class NewsController : Controller
     {
-        // GET: Index
+        // GET: News
         public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult Detail()
         {
             return View();
         }
