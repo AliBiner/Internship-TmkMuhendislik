@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TmkMuhendislikModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AdminInfo">
+          <Key>
+            <PropertyRef Name="A_Id" />
+          </Key>
+          <Property Name="A_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="A_Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="A_Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="A_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="A_Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="A_PhoneNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="A_CreateDate" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="A_UpdateDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="A_DeleteDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="A_Check" Type="bit" />
+          <Property Name="A_Photo" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="N_Id" />
+          </Key>
+          <Property Name="N_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="N_Head" Type="nvarchar" MaxLength="140" />
+          <Property Name="N_Photo" Type="nvarchar(max)" />
+          <Property Name="N_Description" Type="nvarchar(max)" />
+          <Property Name="N_CreateDate" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="N_UpdateDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="N_DeleteDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="N_Check" Type="bit" />
+          <Property Name="A_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK__News__A_Id__398D8EEE">
+          <End Role="AdminInfo" Type="Self.AdminInfo" Multiplicity="0..1" />
+          <End Role="News" Type="Self.News" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdminInfo">
+              <PropertyRef Name="A_Id" />
+            </Principal>
+            <Dependent Role="News">
+              <PropertyRef Name="A_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TmkMuhendislikModelStoreContainer">
+          <EntitySet Name="AdminInfo" EntityType="Self.AdminInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__News__A_Id__398D8EEE" Association="Self.FK__News__A_Id__398D8EEE">
+            <End Role="AdminInfo" EntitySet="AdminInfo" />
+            <End Role="News" EntitySet="News" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TmkMuhendislikModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AdminInfo">
+          <Key>
+            <PropertyRef Name="A_Id" />
+          </Key>
+          <Property Name="A_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="A_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="A_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="A_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="A_Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="A_PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="A_CreateDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="A_UpdateDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="A_DeleteDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="A_Check" Type="Boolean" />
+          <Property Name="A_Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="News" Relationship="Self.FK__News__A_Id__398D8EEE" FromRole="AdminInfo" ToRole="News" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="N_Id" />
+          </Key>
+          <Property Name="N_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="N_Head" Type="String" MaxLength="140" FixedLength="false" Unicode="true" />
+          <Property Name="N_Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="N_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="N_CreateDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="N_UpdateDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="N_DeleteDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="N_Check" Type="Boolean" />
+          <Property Name="A_Id" Type="Int32" />
+          <NavigationProperty Name="AdminInfo" Relationship="Self.FK__News__A_Id__398D8EEE" FromRole="News" ToRole="AdminInfo" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK__News__A_Id__398D8EEE">
+          <End Role="AdminInfo" Type="Self.AdminInfo" Multiplicity="0..1" />
+          <End Role="News" Type="Self.News" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdminInfo">
+              <PropertyRef Name="A_Id" />
+            </Principal>
+            <Dependent Role="News">
+              <PropertyRef Name="A_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TmkMuhendislikEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AdminInfoes" EntityType="Self.AdminInfo" />
+          <EntitySet Name="News" EntityType="Self.News" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <AssociationSet Name="FK__News__A_Id__398D8EEE" Association="Self.FK__News__A_Id__398D8EEE">
+            <End Role="AdminInfo" EntitySet="AdminInfoes" />
+            <End Role="News" EntitySet="News" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TmkMuhendislikModelStoreContainer" CdmEntityContainer="TmkMuhendislikEntities">
+          <EntitySetMapping Name="AdminInfoes">
+            <EntityTypeMapping TypeName="TmkMuhendislikModel.AdminInfo">
+              <MappingFragment StoreEntitySet="AdminInfo">
+                <ScalarProperty Name="A_Id" ColumnName="A_Id" />
+                <ScalarProperty Name="A_Email" ColumnName="A_Email" />
+                <ScalarProperty Name="A_Password" ColumnName="A_Password" />
+                <ScalarProperty Name="A_Name" ColumnName="A_Name" />
+                <ScalarProperty Name="A_Surname" ColumnName="A_Surname" />
+                <ScalarProperty Name="A_PhoneNumber" ColumnName="A_PhoneNumber" />
+                <ScalarProperty Name="A_CreateDate" ColumnName="A_CreateDate" />
+                <ScalarProperty Name="A_UpdateDate" ColumnName="A_UpdateDate" />
+                <ScalarProperty Name="A_DeleteDate" ColumnName="A_DeleteDate" />
+                <ScalarProperty Name="A_Check" ColumnName="A_Check" />
+                <ScalarProperty Name="A_Photo" ColumnName="A_Photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="News">
+            <EntityTypeMapping TypeName="TmkMuhendislikModel.News">
+              <MappingFragment StoreEntitySet="News">
+                <ScalarProperty Name="N_Id" ColumnName="N_Id" />
+                <ScalarProperty Name="N_Head" ColumnName="N_Head" />
+                <ScalarProperty Name="N_Photo" ColumnName="N_Photo" />
+                <ScalarProperty Name="N_Description" ColumnName="N_Description" />
+                <ScalarProperty Name="N_CreateDate" ColumnName="N_CreateDate" />
+                <ScalarProperty Name="N_UpdateDate" ColumnName="N_UpdateDate" />
+                <ScalarProperty Name="N_DeleteDate" ColumnName="N_DeleteDate" />
+                <ScalarProperty Name="N_Check" ColumnName="N_Check" />
+                <ScalarProperty Name="A_Id" ColumnName="A_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="TmkMuhendislikModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
