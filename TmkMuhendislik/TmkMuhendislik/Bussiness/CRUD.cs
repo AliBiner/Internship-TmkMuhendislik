@@ -25,7 +25,19 @@ namespace TmkMuhendislik.Bussiness
         public News ReadById(int id)
         {
             var news = db.News.Where(x => x.N_Id == id).FirstOrDefault();
-            return news;
+            if (news==null)
+            {
+                return null;
+            }
+            else if (news.N_Check==false)
+            {
+                return null;
+            }
+            else
+            {
+                return news;
+            }
+            
         }
 
     }

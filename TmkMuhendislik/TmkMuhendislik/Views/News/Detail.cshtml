@@ -4,33 +4,41 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-<div class="container my-5 gap-5">
+@if (Model == null)
+{
+    <h3 class="text-center my-5">Böyle Bir Haber Bulunmamaktadır. </h3>
+}
+else
+{
+    <div class="container my-5 gap-5">
        
            
-                <div class="col-md-12 "> @Model.N_Head</div>
-                <div class="col-md-12">
-                    <img src="~/Images/BackgroundImages/Laptop-iStock.jpg" style="height: 100%; width: 100%;" />
+        <div class="col-md-12 "> @Model.N_Head</div>
+        <div class="col-md-12">
+            <img src="~/Images/BackgroundImages/Laptop-iStock.jpg" style="height: 100%; width: 100%;" />
+        </div>
+        <div class="col-md-12">
+            @Model.N_Description
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-6">
+                    <p> @Model.N_CreateDate</p>
                 </div>
-                <div class="col-md-12">
-                   @Model.N_Description
+                <div class="col-6 text-right">
+                    <a href="@Url.Action("Index", "News")" class="btn btn-primary">Önceki Sayfa</a>
                 </div>
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-6">
-                            <p> @Model.N_CreateDate</p>
-                        </div>
-                        <div class="col-6 text-right">
-                            <a href="@Url.Action("Index", "News")" class="btn btn-primary">Önceki Sayfa</a>
-                        </div>
-                    </div>
-                </div>
+            </div>
+        </div>
 
            
         
 
 
     </div>
+}
+
+
 
 
 

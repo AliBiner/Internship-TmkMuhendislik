@@ -11,7 +11,7 @@ namespace TmkMuhendislik.Controllers
     {
         // GET: Home
         
-        public ActionResult Home()
+        public ActionResult Index()
         {
             //String[] dizi = RandomDataNavbar.RndCount(12);
             
