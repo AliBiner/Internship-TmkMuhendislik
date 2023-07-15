@@ -5,346 +5,59 @@
 }
 
 
-
 @if (Model == null)
 {
     <div class="container">
         <div class="text-center">
             Henüz Haber Yok...
         </div>
-
     </div>
 }
-@if (Model != null)
-{
-    
-    if (Model.Count < 3)
-    {
-
+@if (Model != null) {
         <main class="container my-5">
-            <div>
-                @if (Model.Count < 4)
-                {
-                    <div>
-
-                        <div class="card mb-3">
-                            <img src="~/Images/BackgroundImages/Laptop-iStock.jpg" class="card-img-top news-image-top" />
-                            <div class="card-img-overlay" style="top: unset">
-                                <h5 class="card-title">@Model[0].N_Head</h5>
-                                <p class="card-text">@Model[0].N_Description</p>
-                                <div class="row">
-                                    <div class="col-6">
-
-                                        <p class="card-text"><small class="text-muted">@Model[0].N_CreateDate</small></p>
-                                    </div>
-                                    <div class="col-6 text-right">
-                                        <a href="@Url.Action("Detail", "News")" class="btn btn-primary">Daha Fazla</a>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-
-                    </div>
+            <div class="card mb-3">
+                <img src="~/Images/BackgroundImages/Laptop-iStock.jpg" class="card-img-top news-image-top" />
+                <div class="card-img-overlay" style="top: unset">
+                    <h5 class="card-title">@Model[0].N_Head</h5>
+                    <p class="card-text to-4">@Model[0].N_Description</p>
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="card mb-3">
-                                <img src="~/Images/BackgroundImages/Laptop-iStock.jpg" class="card-img-top news-image-top" />
-                                <div class="card-img-overlay" style="top: unset">
-                                    <h5 class="card-title">@Model[1].N_Head</h5>
-                                    <p class="card-text">@Model[1].N_Description</p>
-                                    <div class="row">
-                                        <div class="col-6">
+                        <div class="col-6">
 
-                                            <p class="card-text"><small class="text-muted">@Model[1].N_CreateDate</small></p>
-                                        </div>
-                                        <div class="col-6 text-right">
-                                            <a href="@Url.Action("Detail", "News")" class="btn btn-primary">Daha Fazla</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
+                            <p class="card-text"><small class="text-muted">@Model[0].N_CreateDate</small></p>
                         </div>
+                        <div class="col-6 text-right">
 
-                        <div class="col-md-6">
-                            <div class="card mb-3">
-                                <img src="~/Images/BackgroundImages/Laptop-iStock.jpg" class="card-img-top news-image-top" />
-                                <div class="card-img-overlay" style="top: unset">
-                                    <h5 class="card-title">@Model[2].N_Head</h5>
-                                    <p class="card-text">@Model[2].N_Description</p>
-                                    <div class="row">
-                                        <div class="col-6">
-
-                                            <p class="card-text"><small class="text-muted">@Model[2].N_CreateDate</small></p>
-                                        </div>
-                                        <div class="col-6 text-right">
-                                            <a href="@Url.Action("Detail", "News")" class="btn btn-primary">Daha Fazla</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
+                            <a>@Html.ActionLink("Daha Fazla","Detail","News",new{Id=Model[0].N_Id},new {@class="btn btn-primary"})</a>
+                            
                         </div>
-
                     </div>
-
-                }
-                @if (Model.Count < 3)
-                {
-                    <div>
-
-                        <div class="card mb-3">
-                            <img src="~/Images/BackgroundImages/Laptop-iStock.jpg" class="card-img-top news-image-top" />
-                            <div class="card-img-overlay" style="top: unset">
-                                <h5 class="card-title">@Model[0].N_Head</h5>
-                                <p class="card-text">@Model[0].N_Description</p>
-                                <div class="row">
-                                    <div class="col-6">
-
-                                        <p class="card-text"><small class="text-muted">@Model[0].N_CreateDate</small></p>
-                                    </div>
-                                    <div class="col-6 text-right">
-                                        <a href="@Url.Action("Detail", "News")" class="btn btn-primary">Daha Fazla</a>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card mb-3">
-                                <img src="~/Images/BackgroundImages/Laptop-iStock.jpg" class="card-img-top news-image-top" />
-                                <div class="card-img-overlay" style="top: unset">
-                                    <h5 class="card-title">@Model[1].N_Head</h5>
-                                    <p class="card-text">@Model[1].N_Description</p>
-                                    <div class="row">
-                                        <div class="col-6">
-
-                                            <p class="card-text"><small class="text-muted">@Model[1].N_CreateDate</small></p>
-                                        </div>
-                                        <div class="col-6 text-right">
-                                            <a href="@Url.Action("Detail", "News")" class="btn btn-primary">Daha Fazla</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-
-
-                    </div>
-
-                }
-                @if (Model.Count < 2)
-                {
-                    <div>
-
-                        <div class="card mb-3">
-                            <img src="~/Images/BackgroundImages/Laptop-iStock.jpg" class="card-img-top news-image-top" />
-                            <div class="card-img-overlay" style="top: unset">
-                                <h5 class="card-title">@Model[0].N_Head</h5>
-                                <p class="card-text">@Model[0].N_Description</p>
-                                <div class="row">
-                                    <div class="col-6">
-
-                                        <p class="card-text"><small class="text-muted">@Model[0].N_CreateDate</small></p>
-                                    </div>
-                                    <div class="col-6 text-right">
-                                        <a href="@Url.Action("Detail", "News")" class="btn btn-primary">Daha Fazla</a>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-
-                    </div>
-                }
-
-
+                </div>
             </div>
-        </main>
-    }
-
-    else
-    {
-        <main class="container my-5">
-            <div>
-                <div>
+     
+            <h3 class="text-center my-5">
+                Son Haberler
+                </h3>
+       
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 1.5rem;">
+                @for (var i = 1; i < Model.Count; i++)
+                {
                     <div class="card mb-3">
-                            <img src="~/Images/BackgroundImages/Laptop-iStock.jpg" class="card-img-top news-image-top" />
-                            <div class="card-img-overlay" style="top: unset">
-                                <h5 class="card-title">@Model[0].N_Head</h5>
-                                <p class="card-text">@Model[0].N_Description</p>
-                                <div class="row">
-                                    <div class="col-6">
-
-                                        <p class="card-text"><small class="text-muted">@Model[0].N_CreateDate</small></p>
-                                    </div>
-                                    <div class="col-6 text-right">
-                                        <a href="@Url.Action("Detail", "News")" class="btn btn-primary">Daha Fazla</a>
-                                    </div>
+                        <img src="~/Images/BackgroundImages/Laptop-iStock.jpg" class="card-img-top news-image-top"/>
+                        <div class="card-img-overlay" style="top: unset">
+                            <h5 class="card-title">@Model[i].N_Head</h5>
+                            <p class="card-text to-3" >@Model[i].N_Description</p>
+                            <div class="row">
+                                <div class="col-6">
+                                    <p class="card-text"><small class="text-muted">@Model[i].N_CreateDate</small></p>
                                 </div>
-
-
-                            </div>
-                        </div>
-                </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="card mb-3">
-                                <img src="~/Images/BackgroundImages/Laptop-iStock.jpg" class="card-img-top news-image-top" />
-                                <div class="card-img-overlay" style="top: unset">
-                                    <h5 class="card-title">@Model[1].N_Head</h5>
-                                    <p class="card-text">@Model[1].N_Description</p>
-                                    <div class="row">
-                                        <div class="col-6">
-
-                                            <p class="card-text"><small class="text-muted">@Model[1].N_CreateDate</small></p>
-                                        </div>
-                                        <div class="col-6 text-right">
-                                            <a href="@Url.Action("Detail", "News")" class="btn btn-primary">Daha Fazla</a>
-                                        </div>
-                                    </div>
+                                <div class="col-6 text-right">
+                                    <a>@Html.ActionLink("Daha Fazla","Detail","News",new{Id=Model[i].N_Id},new {@class="btn btn-primary"})</a>
                                 </div>
                             </div>
-
                         </div>
-
-                        <div class="col-md-6">
-                            <div class="card mb-3">
-                                <img src="~/Images/BackgroundImages/Laptop-iStock.jpg" class="card-img-top news-image-top" />
-                                <div class="card-img-overlay" style="top: unset">
-                                    <h5 class="card-title">@Model[2].N_Head</h5>
-                                    <p class="card-text">@Model[2].N_Description</p>
-                                    <div class="row">
-                                        <div class="col-6">
-
-                                            <p class="card-text"><small class="text-muted">@Model[2].N_CreateDate</small></p>
-                                        </div>
-                                        <div class="col-6 text-right">
-                                            <a href="@Url.Action("Detail", "News")" class="btn btn-primary">Daha Fazla</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
                     </div>
-
-               
+                }
             </div>
         </main>
-       
-       
-        <div class="container">
-            <div class="row gap-5">
-                <h2 class="text-center">
-                    <span>
-                        Son Haberler
-                    </span>
-                </h2>
-                <div class="container">
-                    <div class="test-container">
-                        @for (var i = 3; i < Model.Count; i++)
-                        {
-                            <div class="card">
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <img src="~/Images/BackgroundImages/Laptop-iStock.jpg" class="news-image-bottom"/>
-                                    </div>
-                                    <div class="col-md-7">
-                                        <div class="card-body">
-                                            <h5 class="card-title">@Model[i].N_Head</h5>
-
-                                            <p class="card-text">@Model[i].N_Description</p>
-                                            <div class="row">
-                                                <div class="col-6">
-
-                                                    <p class="card-text"><small class="text-muted">@Model[2].N_CreateDate</small></p>
-                                                </div>
-                                                <div class="col-6 text-right">
-                                                    <a href="@Url.Action("Detail", "News")" class="btn btn-primary">Daha Fazla</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        }
-                        
-                        @*<div class="card">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <img src="~/Images/BackgroundImages/Laptop-iStock.jpg" class="news-image-bottom"/>
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="@Url.Action("Detail", "News")" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <img src="~/Images/BackgroundImages/Laptop-iStock.jpg" class="news-image-bottom"/>
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="@Url.Action("Detail", "News")" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <div class="card">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <img src="~/Images/BackgroundImages/Laptop-iStock.jpg" class="news-image-bottom"/>
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="@Url.Action("Detail", "News")" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>*@
-                    </div>
-                </div>
-
-
-
-            </div>
-        </div>
     }
-
-
-
-
-
-
-
-}
-
-
-
 

@@ -9,7 +9,7 @@ namespace TmkMuhendislik.Bussiness
     public class CRUD
     {
         private TmkMuhendislikEntities db = new TmkMuhendislikEntities();
-        public List<News> Control()
+        public List<News> Read()
         {
             var controls = db.News.Where(x=>x.N_Check==true).ToList();
             if (controls==null)
@@ -18,9 +18,14 @@ namespace TmkMuhendislik.Bussiness
             }
             else
             {
-                
                 return controls;
             }
+        }
+
+        public News ReadById(int id)
+        {
+            var news = db.News.Where(x => x.N_Id == id).FirstOrDefault();
+            return news;
         }
 
     }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TmkMuhendislik.Bussiness;
+using TmkMuhendislik.Models;
 
 namespace TmkMuhendislik.Controllers
 {
@@ -14,14 +15,15 @@ namespace TmkMuhendislik.Controllers
         // GET: News
         public ActionResult Index()
         {
-            var model = c.Control();
+            var model = c.Read();
 
             return View(model);
         }
-
-        public ActionResult Detail()
+        
+        public ActionResult Detail(int id)
         {
-            return View();
+            var model = c.ReadById(id);
+            return View(model);
         }
 
 
