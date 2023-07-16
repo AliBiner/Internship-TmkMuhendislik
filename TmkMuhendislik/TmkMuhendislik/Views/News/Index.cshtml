@@ -13,51 +13,55 @@
         </div>
     </div>
 }
-@if (Model != null) {
-        <main class="container my-5">
-            <div class="card mb-3">
-                <img src="~/Images/BackgroundImages/Laptop-iStock.jpg" class="card-img-top news-image-top" />
-                <div class="card-img-overlay" style="top: unset">
-                    <h5 class="card-title">@Model[0].N_Head</h5>
-                    <p class="card-text to-4">@Model[0].N_Description</p>
-                    <div class="row">
-                        <div class="col-6">
+@if (Model != null)
+{
+    <main class="container my-5">
+        <div class="card mb-3">
+            <img src="~/Images/BackgroundImages/Laptop-iStock.jpg" class="card-img-top news-image-top"/>
+            <div class="card-img-overlay" style="top: unset">
+                <h5 class="card-title">@Model[0].N_Head</h5>
+                <p class="card-text to-4">@Model[0].N_Description</p>
+                <div class="row">
+                    <div class="col-6">
 
-                            <p class="card-text"><small class="text-muted">@Model[0].N_CreateDate</small></p>
-                        </div>
-                        <div class="col-6 text-right">
+                        <p class="card-text">
+                            <small class="text-muted">@Model[0].N_CreateDate</small>
+                        </p>
+                    </div>
+                    <div class="col-6 text-right">
 
-                            <a>@Html.ActionLink("Daha Fazla","Detail","News",new{Id=Model[0].N_Id},new {@class="btn btn-primary"})</a>
-                            
-                        </div>
+                        <a>@Html.ActionLink("Daha Fazla", "Detail", "News", new { Id = Model[0].N_Id }, new { @class = "btn btn-primary" })</a>
+
                     </div>
                 </div>
             </div>
-     
-            <h3 class="text-center my-5">
-                Son Haberler
-                </h3>
-       
-            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 1.5rem;">
-                @for (var i = 1; i < Model.Count; i++)
-                {
-                    <div class="card mb-3">
-                        <img src="~/Images/BackgroundImages/Laptop-iStock.jpg" class="card-img-top news-image-top"/>
-                        <div class="card-img-overlay" style="top: unset">
-                            <h5 class="card-title">@Model[i].N_Head</h5>
-                            <p class="card-text to-3" >@Model[i].N_Description</p>
-                            <div class="row">
-                                <div class="col-6">
-                                    <p class="card-text"><small class="text-muted">@Model[i].N_CreateDate</small></p>
-                                </div>
-                                <div class="col-6 text-right">
-                                    <a>@Html.ActionLink("Daha Fazla","Detail","News",new{Id=Model[i].N_Id},new {@class="btn btn-primary"})</a>
-                                </div>
+        </div>
+
+        <h3 class="text-center my-5">
+            Son Haberler
+        </h3>
+
+        <div style="display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));">
+            @for (var i = 1; i < Model.Count; i++)
+            {
+                <div class="card mb-3">
+                    <img src="~/Images/BackgroundImages/Laptop-iStock.jpg" class="card-img-top news-image-top"/>
+                    <div class="card-img-overlay" style="top: unset">
+                        <h5 class="card-title">@Model[i].N_Head</h5>
+                        <p class="card-text to-3">@Model[i].N_Description</p>
+                        <div class="row">
+                            <div class="col-6">
+                                <p class="card-text">
+                                    <small class="text-muted">@Model[i].N_CreateDate</small>
+                                </p>
+                            </div>
+                            <div class="col-6 text-right">
+                                <a>@Html.ActionLink("Daha Fazla", "Detail", "News", new { Id = Model[i].N_Id }, new { @class = "btn btn-primary" })</a>
                             </div>
                         </div>
                     </div>
-                }
-            </div>
-        </main>
-    }
-
+                </div>
+            }
+        </div>
+    </main>
+}

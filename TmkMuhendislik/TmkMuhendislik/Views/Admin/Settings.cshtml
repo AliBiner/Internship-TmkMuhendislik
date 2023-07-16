@@ -1,0 +1,61 @@
+﻿@model TmkMuhendislik.Models.AdminInfo
+@{
+    ViewBag.Title = "Settings";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+<div class="container center">
+    <div style="margin-top: 100px;">
+        
+        <div class="col">
+            <div class="col">Ad</div>
+            <div class="col">Soyad</div>
+            <div class="col">Email</div>
+            <div class="col">Telefon</div>
+            <div class="col">Kayıt Tarihi</div>
+            <div class="col">Fotoğraf</div>
+            <div class="col">Şifre</div>
+        </div>
+        <div class="col">
+            <div class="col">@Model.A_Name</div>
+            <div class="col">@Model.A_Surname</div>
+            <div class="col">@Model.A_Email</div>
+            <div class="col">@Model.A_PhoneNumber</div>
+            <div class="col">@Model.A_CreateDate</div>
+            <div class="col">@Model.A_Photo</div>
+            <div class="col">@Model.A_Password</div>
+        </div>
+        @*<table class="table">
+            <thead class="d-table-row">
+
+            <tr >
+                <th scope="col-3">Ad</th>
+                <th scope="col-3">Soyad</th>
+                <th scope="col-3">Email</th>
+                <th scope="col-3">Telefon</th>
+                <th scope="col-3">Kayıt Tarihi</th>
+                <th scope="col-3">Fotoğraf</th>
+                <th scope="col-3">Telefon</th>
+                <th scope="col-3">Telefon</th>
+                <th scope="col-3">Şifre</th>
+            </tr>
+            </thead="d-table-row">
+            <tbody class="d-table-row">
+            <tr class="">
+                <td scope="col-3">Mark</td>
+                <td scope="col-3">Mark</td>
+                <td scope="col-3">Mark</td>
+                <td scope="col-3">Mark</td>
+                <td scope="col-3">Mark</td>
+                <td scope="col-3">Mark</td>
+                <td scope="col-3">Mark</td>
+
+            </tr>
+
+            </tbody>
+        </table>*@
+    </div>
+</div>
+

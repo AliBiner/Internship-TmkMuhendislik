@@ -1,44 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using TmkMuhendislik.Models;
 
 namespace TmkMuhendislik.Bussiness
 {
     public class CRUD
     {
-        private TmkMuhendislikEntities db = new TmkMuhendislikEntities();
-        public List<News> Read()
+        private readonly TmkMuhendislikEntities db = new TmkMuhendislikEntities();
+
+        public List<News> ReadNews()
         {
-            var controls = db.News.Where(x=>x.N_Check==true).ToList();
-            if (controls==null)
-            {
+            var controls = db.News.Where(x => x.N_Check == true).ToList();
+            if (controls == null)
                 return null;
-            }
-            else
-            {
-                return controls;
-            }
+            return controls;
         }
 
-        public News ReadById(int id)
+        public News ReadNewsById(int id)
         {
             var news = db.News.Where(x => x.N_Id == id).FirstOrDefault();
-            if (news==null)
-            {
+            if (news == null)
                 return null;
-            }
-            else if (news.N_Check==false)
-            {
+            if (news.N_Check == false)
                 return null;
-            }
-            else
-            {
-                return news;
-            }
-            
+            return news;
         }
 
+     
     }
 }

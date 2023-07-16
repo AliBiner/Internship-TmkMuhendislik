@@ -1,0 +1,70 @@
+﻿@model List<TmkMuhendislik.Models.AdminInfo>
+@{
+    ViewBag.Title = "AdminCheckControl";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div id="layoutSidenav_content">
+    <main>
+        <div class="container-fluid px-4">
+
+            <div class="card mb-4 my-5">
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>
+                    Adminler
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimple">
+                        <thead>
+                            <tr>
+                                <th>Ad</th>
+                                <th>Soyad</th>
+                                <th>Telefon</th>
+                                <th>Onay Durumu</th>
+                                <th>Kayıt Tarihi</th>
+                                <th>Onaylama</th>
+                                <th>Reddet</th>
+
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Ad</th>
+                                <th>Soyad</th>
+                                <th>Telefon</th>
+                                <th>Onay Durumu</th>
+                                <th>Kayıt Tarihi</th>
+                                <th>Onaylama</th>
+                                <th>Reddet</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.A_Name</td>
+                                <td>@item.A_Surname</td>
+                                <td>@item.A_PhoneNumber</td>
+                                <td>Bekliyor...</td>
+                                <td>@item.A_CreateDate</td>
+                                <td>
+                                    @Html.ActionLink("Onayla", "ApproveAdmin", "Admin",new {id=item.A_Id}, new { @class = "btn btn-success" })
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Reddet", "DeclineAdmin", "Admin", new { id = item.A_Id }, new { @class = "btn btn-danger" })
+                                </td>
+
+                            </tr>
+                        }
+
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+   
+</div>
+
+

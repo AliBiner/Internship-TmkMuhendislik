@@ -1,0 +1,88 @@
+﻿@model List<TmkMuhendislik.Models.News>
+@{
+    ViewBag.Title = "News";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div id="layoutSidenav_content">
+    <main>
+        <div class="container-fluid px-4">
+            
+            <div class="card mb-4 my-5">
+                <div class="text-right">
+                    <a class="btn btn-secondary col-md-1" href="@Url.Action("CreateNews","AdminNews",new {id= Session["Id"]})">Haber Oluştur</a>
+                </div>
+                
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>
+                    Haberler
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimple">
+                        <thead>
+                        <tr>
+                            <th>Haber Başlık</th>
+                            <th>Resim</th>
+                            <th>İçerik</th>
+                            <th>Yayınlanıyor Mu?</th>
+                            <th>Oluşturma Tarihi</th>
+                            <th>Güncelleme Tarihi</th>
+                            <th>Silme Tarihi</th>
+                            <th>Göster</th>
+                            <th>Sil</th>
+                            <th>Düzenle</th>
+                            <th>Göster</th>
+
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th>Haber Başlık</th>
+                            <th>Resim</th>
+                            <th>İçerik</th>
+                            <th>Yayınlanıyor Mu?</th>
+                            <th>Oluşturma Tarihi</th>
+                            <th>Güncelleme Tarihi</th>
+                            <th>Silme Tarihi</th>
+                            <th>Göster</th>
+                            <th>Sil</th>
+                            <th>Düzenle</th>
+                            <th>Göster</th>
+                        </tr>
+                        </tfoot>
+                        <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.N_Head</td>
+                                <td>@item.N_Photo</td>
+                                <td>@item.N_Description</td>
+                                <td>@item.N_Check</td>
+                                <td>@item.N_CreateDate</td>
+                                <td>@item.N_UpdateDate</td>
+                                <td>@item.N_DeleteDate</td>
+                                <td>
+                                    @Html.ActionLink("Yayınla", "RealeseNews", "AdminNews", new { id = item.N_Id }, new { @class = "btn btn-success" })
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Yayından Kaldır", "DispatchNews", "AdminNews", new { id = item.N_Id }, new { @class = "btn btn-danger" })
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Düzenle", "DeclineAdmin", "Admin", new { id = item.N_Id }, new { @class = "btn btn-info" })
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Göster", "Detail", "News", new { id = item.N_Id }, new { @class = "btn btn-link" })
+                                </td>
+
+                            </tr>
+                        }
+
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</div>

@@ -13,7 +13,7 @@ namespace TmkMuhendislik.Controllers
         
         public ActionResult Index()
         {
-            //String[] dizi = RandomDataNavbar.RndCount(12);
+            
             
            
             return View();

@@ -128,7 +128,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Bussiness\Admin.cs" />
     <Compile Include="Bussiness\CRUD.cs" />
+    <Compile Include="Bussiness\CustomActionFilter.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\Admin\AdminNewsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -162,6 +166,7 @@
     <Compile Include="RandomData\RandomDataNavbar.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="content\materialize\css\Admin\css\styles.css" />
     <Content Include="content\materialize\css\CardBox.css" />
     <Content Include="content\materialize\css\DetailPage.css" />
     <Content Include="content\materialize\css\NavbarProp.css" />
@@ -194,6 +199,13 @@
     </Content>
     <Content Include="scripts\materialize\materialize.js" />
     <Content Include="scripts\materialize\materialize.min.js" />
+    <Content Include="scripts\MyScripts\Admin\demo\chart-area-demo.js" />
+    <Content Include="scripts\MyScripts\Admin\demo\chart-bar-demo.js" />
+    <Content Include="scripts\MyScripts\Admin\demo\chart-pie-demo.js" />
+    <Content Include="scripts\MyScripts\Admin\demo\datatables-demo.js" />
+    <Content Include="scripts\MyScripts\Admin\js\datatables-simple-demo.js" />
+    <Content Include="scripts\MyScripts\Admin\js\scripts.js" />
+    <Content Include="scripts\MyScripts\Admin\Register\Register.js" />
     <Content Include="scripts\MyScripts\CloseNavbar.js" />
     <Content Include="scripts\MyScripts\DropDownTrigger.js" />
     <Content Include="scripts\MyScripts\HamburgerMenu.js" />
@@ -272,6 +284,14 @@
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\News\Detail.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Admin\Register.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Admin\AdminCheckControl.cshtml" />
+    <Content Include="Views\Admin\News.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\Settings.cshtml" />
+    <Content Include="Views\AdminNews\CreateNews.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
